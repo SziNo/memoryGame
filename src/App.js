@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import './App.css'
 import SingleCard from './components/SingleCard'
+import { nanoid } from '@reduxjs/toolkit'
 
 const cardImages = [
   { src: '/img/helmet-1.png', matched: false },
@@ -22,7 +23,7 @@ function App() {
   const shuffleCards = () => {
     const shuffledCards = [...cardImages, ...cardImages]
       .sort(() => Math.random() - 0.5)
-      .map((card) => ({ ...card, id: Math.random() }))
+      .map((card) => ({ ...card, id: nanoid() }))
 
     setChoiceOne(null)
     setChoiceTwo(null)
