@@ -14,7 +14,7 @@ const cardImages = [
 
 function App() {
   const [cards, setCards] = useState([])
-  const [turns, setTurns] = useState(0)
+  const [clicks, setClicks] = useState(0)
   const [choiceOne, setChoiceOne] = useState(null)
   const [choiceTwo, setChoiceTwo] = useState(null)
   const [disabled, setDisabled] = useState(false)
@@ -28,7 +28,7 @@ function App() {
     setChoiceOne(null)
     setChoiceTwo(null)
     setCards(shuffledCards)
-    setTurns(0)
+    setClicks(0)
   }
 
   // handle a choice
@@ -58,7 +58,7 @@ function App() {
   const resetTurn = () => {
     setChoiceOne(null)
     setChoiceTwo(null)
-    setTurns((prevTurns) => prevTurns + 1)
+    setClicks((prevTurns) => prevTurns + 1)
     setDisabled(false)
   }
 
@@ -84,7 +84,7 @@ function App() {
           )
         })}
       </section>
-      <p>Turns: {turns}</p>
+      <p>Clicks: {clicks}</p>
     </main>
   )
 }
